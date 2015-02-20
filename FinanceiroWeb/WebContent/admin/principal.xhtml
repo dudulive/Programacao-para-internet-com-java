@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Administração de Usuários - Financeiro Web [versão 1.0]</title>
+</h:head>
+<h:body>
+	<div align="center">
+		<h1>Administração de Usuários</h1>
+		<h:form>
+			<h:dataTable value="#{usuarioBean.listUsuarios}" var="usuario"
+				rules="rows" cellpadding="5">
+				<f:facet name="header">
+					<h:outputLabel value="Listagem de Usuarios" />
+				</f:facet>
+				<f:facet name="footer">
+					<h:outputLabel value="Final da Listagem" />
+				</f:facet>
+				<h:column>
+					<h:commandLink action="#{usuarioBean.actionAtivar}">
+						<h:graphicImage library="imagens"
+							name="usuario_ativo_#{usuario.ativo}.png" style="border:0" />
+						<f:setPropertyActionListener target="#{usuarioBean.usuario}"
+							value="#{usuario}" />
+					</h:commandLink>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Codigo" />
+					</f:facet>
+					<h:outputText value="#{usuario.id}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Nome" />
+					</f:facet>
+					<h:outputText value="#{usuario.nome}" />
+				</h:column>
+				<h:column>
+					<h:graphicImage library="imagens"
+						name="bandeira_#{usuario.idioma}.png" style="border:0" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Email" />
+					</f:facet>
+					<h:outputText value="#{usuario.email}" />
+				</h:column>
+				<h:column>
+					<h:commandLink action="#{usuarioBean.actionExcluir}"
+						onclick="if(!confirm('Confirma a exclusão do usuario #{usuario.nome}?')) return false;">
+						<h:graphicImage library="imagens" name="excluir16.png"
+							style="border:0" />
+						<f:setPropertyActionListener target="#{usuarioBean.usuario}"
+							value="#{usuario}" />
+					</h:commandLink>
+				</h:column>
+				<h:column>
+					<h:commandLink action="#{usuarioBean.actionEditar}">
+						<h:graphicImage library="imagens" name="editar16.png"
+							style="border:0" />
+						<f:setPropertyActionListener target="#{usuarioBean.usuario}"
+							value="#{usuario}" />
+					</h:commandLink>
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</div>
+</h:body>
+</html>

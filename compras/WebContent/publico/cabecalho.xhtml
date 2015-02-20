@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<title>Controle de Compras Mensal [versão 1.0]</title>
+</h:head>	
+<h:body>
+<ui:define name="cabecalho">
+<h:graphicImage library="imagens" name="caixa_64x64.png"
+		style="border:0;"/>
+        <h1>Administração de Compras</h1>
+        <hr/>
+        <div align="left">
+        <h:form>
+        <h:commandButton  action="#{compraBean.actionNovo}" value="Nova compra"/>
+        &nbsp;       
+        <h:commandButton  action="/index.xhtml" value="Lista de compras"/>
+        </h:form>
+        </div>
+        <hr/>
+</ui:define>
+</h:body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Login - Financeiro Web [versão 1.0]</title>
+</h:head>
+<h:body>
+	<div align="center">
+		<h1>Financeiro WEB</h1>
+		<hr />
+		<h:messages style="color:red;margin:8px;" layout="table"/>
+		<h:form>
+			<h:panelGrid columns="2">
+				<f:facet name="header">
+					<h:outputLabel value="Fazer Login para Prosseguir" />
+				</f:facet>
+				<h:outputLabel value="Login:" />
+                <h:inputText value="#{usuarioBean.usuario.login}"/>
+                <h:outputLabel value="Senha:" />
+                <h:inputSecret value="#{usuarioBean.usuario.senha}"/>
+			</h:panelGrid>
+			<h:commandButton value="Login"  action="#{usuarioBean.actionLogin}"/>
+			<br/>
+			<br/>
+			<h:commandLink  action="#{usuarioBean.actionNovo}" value="Registre-se"/>
+		</h:form>
+	</div>
+</h:body>
+</html>

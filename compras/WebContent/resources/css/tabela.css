@@ -1,0 +1,29 @@
+/* Definição de estilos para toda a tabela*/
+.tabela {
+	border: 2px solid black;
+}
+
+/* Definição de estilos para linha de cabeçalho da tabela*/
+.cabecalho {
+	text-align: center;
+	font: 14px Arial, sans-serif;
+	font-weight: bold;
+	color: Snow;
+	background: blue;
+}
+
+/* Definição de estilos para coluna */
+.primeiro {
+	text-align: center;
+	font: 14px Arial, sans-serif;
+	background: gray;
+	border: 2px solid black;
+}
+
+/* Definição de estilos para coluna */
+.ultimo {
+	font: 14px Arial, sans-serif;
+	text-align: center;
+	background: aqua;
+	border: 2px solid black;
+}

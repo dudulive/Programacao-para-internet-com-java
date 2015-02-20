@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Usuário - Financeiro Web [versão 1.0]</title>
+</h:head>
+<h:body>
+	<h:form>
+	<h:inputHidden value="#{usuarioBean.usuario.id}"/>
+	<h:inputHidden value="#{usuarioBean.destinoSalvar}"/>
+	<h:inputHidden value="#{usuarioBean.usuario.ativo}"/>
+		<h:panelGrid columns="2">
+			<f:facet name="header">
+				<h:outputLabel value="Cadastro de Usuários" />
+			</f:facet>
+			<h:outputLabel value="Nome:" />
+			<h:inputText value="#{usuarioBean.usuario.nome}" />
+			<h:outputLabel value="Data de nascimento:" />
+			<h:inputText value="#{usuarioBean.usuario.dataNascimento}">
+				<f:convertDateTime />
+			</h:inputText>
+			<h:outputLabel value="Celular:" />
+			<h:inputText value="#{usuarioBean.usuario.celular}" />
+			<h:outputLabel value="Email:" />
+			<h:inputText value="#{usuarioBean.usuario.email}" />
+
+			<h:outputLabel value="Idioma:" />
+			<h:selectOneMenu value="#{usuarioBean.usuario.idioma}">
+				<f:selectItem itemLabel="Português" itemValue="pt_BR" />
+				<f:selectItem itemLabel="Inglês" itemValue="en_US" />
+				<f:selectItem itemLabel="Espanhol" itemValue="es_ES" />
+			</h:selectOneMenu>
+
+			<h:outputLabel value="Login:" />
+			<h:inputText value="#{usuarioBean.usuario.login}" />
+			<h:outputLabel value="Senha:" />
+			<h:inputSecret value="#{usuarioBean.usuario.senha}" />
+			<h:outputLabel value="Confirme a senha:" />
+			<h:inputSecret />
+		</h:panelGrid>
+		<h:commandButton value="Salvar" action="#{usuarioBean.actionSalvar}" />
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Controle de Compras Mensal [versão 1.0]</title>
+</h:head>
+<h:body>
+	<h:form>
+	<h:inputHidden value="#{compraBean.compra.id}"/>
+	<h:inputHidden value="#{compraBean.destinoSalvar}"/>
+		<h:panelGrid columns="2">
+			<f:facet name="header">
+				<h:outputLabel value="Cadastro de Compras" />
+			</f:facet>
+			<h:outputLabel value="Produto:" />
+			<h:inputText value="#{compraBean.compra.produto}" />
+			<h:outputLabel value="Unidade de Compra:" />
+			<h:inputText value="#{compraBean.compra.unidadeCompra}"/>		
+			<h:outputLabel value="Quantidade do Mês:" />
+			<h:inputText value="#{compraBean.compra.qtdMes}" />
+			<h:outputLabel value="Quantidade Compra:" />
+			<h:inputText value="#{compraBean.compra.qtdCompra}" />
+			<h:outputLabel value="Preço Estimado:" />
+			<h:inputText value="#{compraBean.compra.precoEst}" />
+		</h:panelGrid>
+		<h:commandButton value="Salvar" action="#{compraBean.actionSalvar}" />
+	</h:form>
+</h:body>
+</html>

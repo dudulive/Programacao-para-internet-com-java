@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14140220944950" configfile="/ProdutoWeb/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="produto/lista_produto.xhtml" x="696" y="84" id="pf141402322623611" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" outlinks="pf141402322623612 pf141402322623613" inlinks="pf141402322623614 pf141402322623615 pf141402322623613 pf14154799123157" path="/produto/lista_produto.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="432" y="192" id="pf141402322623616" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf141402322623614 pf141402322623617" inlinks="pf141402322623618" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="tipo/lista_tipo.xhtml" x="120" y="84" id="pf141402322623619" referenceLink="//@navigationRule.9/@navigationCase.0/@toViewId|" outlinks="pf141402322623620 pf141402322623621" inlinks="pf141402322623617 pf141402322623622 pf141402322623621 pf14154741825335" path="/tipo/lista_tipo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="produto/form_produto.xhtml" x="691" y="312" id="pf141402322623623" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf141402322623615" inlinks="pf141402322623612" path="/produto/form_produto.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="tipo/form_tipo.xhtml" x="96" y="312" id="pf141402322623624" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf141402322623622" inlinks="pf141402322623620" path="/tipo/form_tipo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="439" y="12" id="pf141402322623625" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf141402322623618" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="tipo/tipoSucesso.xhtml" x="12" y="-16" id="pf14154741825336" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf14154741825335" path="/tipo/tipoSucesso.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="produto/produtoSucesso.xhtml" x="576" y="-12" id="pf14154799123158" outlinks="pf14154799123157" path="/produto/produtoSucesso.xhtml"/>
+  <links id="pf141402322623614" target="pf141402322623611" source="pf141402322623616" outcome="actionListarProduto" redirect="true"/>
+  <links id="pf141402322623617" target="pf141402322623619" source="pf141402322623616" outcome="actionListarTipo" redirect="true"/>
+  <links id="pf141402322623612" target="pf141402322623623" source="pf141402322623611" outcome="actionManterProduto" redirect="true"/>
+  <links id="pf141402322623620" target="pf141402322623624" source="pf141402322623619" outcome="actionManterTipo" redirect="true"/>
+  <links id="pf141402322623622" target="pf141402322623619" source="pf141402322623624" outcome="actionListarAlteracaoTipo" redirect="true"/>
+  <links id="pf141402322623615" target="pf141402322623611" source="pf141402322623623" outcome="actionListarAlteracaoProduto" redirect="true"/>
+  <links id="pf141402322623613" target="pf141402322623611" source="pf141402322623611" outcome="actionExcluirProduto" redirect="true">
+    <bendPoints d1Width="81" d1Height="-84" d2Width="81" d2Height="-84"/>
+  </links>
+  <links id="pf141402322623621" target="pf141402322623619" source="pf141402322623619" outcome="actionExcluirTipo" redirect="true">
+    <bendPoints d1Width="86" d1Height="-65" d2Width="86" d2Height="-65"/>
+  </links>
+  <links id="pf141402322623618" target="pf141402322623616" source="pf141402322623625" outcome="actionVoltarMenu" redirect="true"/>
+  <links id="pf14154741825335" target="pf141402322623619" source="pf14154741825336" outcome="actionListarAlteracaoTipo"/>
+  <links id="pf14154799123157" target="pf141402322623611" source="pf14154799123158" outcome="actionListarAlteracaoProduto"/>
+</pageflow:Pageflow>

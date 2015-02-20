@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Manutenção de Tipo de Produto - ProdutosWeb [versão 1.0]</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2" border="1" cellpadding="2" cellspacing="4">
+			<f:facet name="header">
+				<h:outputLabel value="Menu Principal" />
+			</f:facet>
+			<h:commandLink value="Listar Tipo" action="actionListarAlteracaoTipo" />
+			<h:commandLink value="Voltar" action="actionVoltarMenu" />
+		</h:panelGrid>
+	</h:form>
+	<hr />
+	<div align="center">
+		<h:form>
+			<h:inputHidden value="#{tipoBean.tipo.id}" />
+			<h:inputHidden value="#{tipoBean.destinoSalvar}" />
+			<h:panelGrid columns="3">
+				<f:facet name="header">
+					<h:outputLabel value="Cadastro de Tipos de Produtos" />
+				</f:facet>
+				<h:outputLabel value="Descrição do Tipo:" />
+				<h:inputText value="#{tipoBean.tipo.descricao}" id="descricao"
+					required="true" requiredMessage="Por favor informe a Descrição." />
+				<h:message for="descricao" style="color:red;margin:8px;" />
+				<h:commandButton value="Salvar" action="#{tipoBean.actionSalvar}" />
+			</h:panelGrid>
+		</h:form>
+	</div>
+</h:body>
+</html>

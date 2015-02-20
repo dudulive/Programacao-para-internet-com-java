@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Administração de Produto - ProdutosWeb [versão 1.0]</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2" border="1" cellpadding="2" cellspacing="4">
+			<f:facet name="header">
+				<h:outputLabel value="Menu Principal" />
+			</f:facet>
+			<h:commandLink value="Manter Produto"
+				action="#{produtoBean.actionManterProduto}" />
+			<h:commandLink value="Voltar" action="actionVoltarMenu" />
+		</h:panelGrid>
+		<hr />
+		<div align="center">
+			<h:dataTable value="#{produtoBean.listProdutos}" var="produto"
+				rules="rows" cellpadding="5">
+				<f:facet name="header">
+					<h:outputLabel value="Listagem de Produtos" />
+				</f:facet>
+				<f:facet name="footer">
+					<h:outputLabel value="Final da Listagem" />
+				</f:facet>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Código" />
+					</f:facet>
+					<h:outputText value="#{produto.codigo}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Nome" />
+					</f:facet>
+					<h:outputText value="#{produto.nome}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Marca" />
+					</f:facet>
+					<h:outputText value="#{produto.marca}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Preço" />
+					</f:facet>
+					<h:outputText value="#{produto.preco}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Tipo" />
+					</f:facet>
+					<h:outputText value="#{produto.tipo.descricao}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Excluir" />
+					</f:facet>
+					<h:commandLink action="#{produtoBean.actionExcluir}"
+						onclick="if(!confirm('Confirma a exclusão do Produto #{produto.nome}?')) return false;">
+						<h:graphicImage library="imagens" name="excluir16.png"
+							style="border:0" />
+						<f:setPropertyActionListener target="#{produtoBean.produto}"
+							value="#{produto}" />
+					</h:commandLink>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Editar" />
+					</f:facet>
+					<h:commandLink action="#{produtoBean.actionEditar}">
+						<h:graphicImage library="imagens" name="editar16.png"
+							style="border:0" />
+						<f:setPropertyActionListener target="#{produtoBean.produto}"
+							value="#{produto}" />
+					</h:commandLink>
+				</h:column>
+			</h:dataTable>
+		</div>
+	</h:form>
+</h:body>
+</html>
